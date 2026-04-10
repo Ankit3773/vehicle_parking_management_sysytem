@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Entry Management | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="entry">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Operations Module</p>
+                        <h1>Vehicle Entry Management</h1>
+                    </div>
+                </div>
+
+                <div class="form-layout">
+                    <form id="entry-form" class="app-form">
+                        <label>
+                            Vehicle Number
+                            <input type="text" id="vehicleNumber" placeholder="Example: MP09AB1234" maxlength="20" pattern="[A-Za-z0-9 -]{4,20}" required>
+                            <div class="helper-text">Recommended demo vehicle number: <span class="mono-text">MH12DE3434</span>.</div>
+                        </label>
+
+                        <label>
+                            Owner Name
+                            <input type="text" id="ownerName" placeholder="Enter owner name" maxlength="100" required>
+                        </label>
+
+                        <label>
+                            Vehicle Type
+                            <select id="vehicleType" required>
+                                <option value="CAR">Car</option>
+                                <option value="BIKE">Bike</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Vehicle Color
+                            <input type="text" id="color" placeholder="Enter vehicle color" maxlength="30" required>
+                        </label>
+
+                        <label>
+                            Notes
+                            <textarea id="notes" rows="4" maxlength="255" placeholder="Optional remarks"></textarea>
+                        </label>
+
+                        <button type="submit" class="primary-btn">Save Entry & Allocate Slot</button>
+                    </form>
+
+                    <div class="info-stack">
+                        <div id="entry-message"></div>
+                        <article class="summary-card">
+                            <h3>Recommended Live Demo Data</h3>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span>Vehicle Number</span>
+                                    <strong class="mono-text">MH12DE3434</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Owner Name</span>
+                                    <strong>Rahul Deshmukh</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Vehicle Type</span>
+                                    <strong>CAR</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Vehicle Color</span>
+                                    <strong>Silver</strong>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="summary-card">
+                            <h3>Entry Validation Rules</h3>
+                            <ul class="simple-list">
+                                <li>Vehicle number is normalized automatically before save.</li>
+                                <li>Only one active parking record is allowed per vehicle.</li>
+                                <li>Slot is assigned based on matching vehicle type.</li>
+                                <li>This page is ideal for a screenshot after successful slot allocation.</li>
+                            </ul>
+                        </article>
+
+                        <article class="summary-card" id="entry-result-card">
+                            <h3>Latest Entry Confirmation</h3>
+                            <div id="entry-result" class="empty-state">Submit the form to see allocated slot details.</div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/vehicle-entry.js" defer></script>
+</body>
+</html>

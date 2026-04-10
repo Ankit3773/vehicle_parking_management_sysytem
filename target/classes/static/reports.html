@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations and Revenue Report | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="reports">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Reporting Module</p>
+                        <h1>Daily Operations and Revenue Report</h1>
+                    </div>
+                    <button id="export-report" class="secondary-btn" type="button">Export Report (Demo)</button>
+                </div>
+
+                <form id="report-form" class="inline-form">
+                    <input type="date" id="reportDate" required>
+                    <button type="submit" class="primary-btn">Load Report</button>
+                </form>
+                <div id="reports-message"></div>
+                <p class="helper-text">Recommended report date for screenshots: today, because the seeded data includes active records and completed billing transactions.</p>
+                <div class="callout-banner">
+                    <strong>Report Screenshot Tip</strong>
+                    <span>Capture this page after completing one live exit so the daily table shows active records, completed exits, and updated revenue together.</span>
+                </div>
+
+                <div class="stats-grid compact-grid">
+                    <article class="stat-card">
+                        <span>Total Entries</span>
+                        <strong id="report-total-entries">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Completed Exits</span>
+                        <strong id="report-completed-exits">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Total Payments</span>
+                        <strong id="report-total-payments">0</strong>
+                    </article>
+                    <article class="stat-card revenue-card">
+                        <span>Total Revenue</span>
+                        <strong id="report-total-revenue">₹0</strong>
+                    </article>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Vehicle Number</th>
+                            <th>Owner</th>
+                            <th>Slot</th>
+                            <th>Entry Time</th>
+                            <th>Exit Time</th>
+                            <th>Status</th>
+                            <th>Fee</th>
+                        </tr>
+                        </thead>
+                        <tbody id="report-table-body">
+                        <tr>
+                            <td colspan="7" class="empty-state">Loading today's report...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/reports.js" defer></script>
+</body>
+</html>

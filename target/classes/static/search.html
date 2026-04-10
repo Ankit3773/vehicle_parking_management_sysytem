@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Record Search | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="search">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Search Module</p>
+                        <h1>Vehicle Record Search</h1>
+                    </div>
+                </div>
+
+                <form id="search-form" class="inline-form">
+                    <input type="text" id="searchVehicleNumber" placeholder="Enter vehicle number to search" maxlength="20" pattern="[A-Za-z0-9 -]{4,20}" required>
+                    <button type="submit" class="primary-btn">Search</button>
+                </form>
+                <p class="helper-text">Suggested sample search values: <span class="mono-text">MP09AB1234</span>, <span class="mono-text">DL01EE8899</span>, and your newly exited demo vehicle.</p>
+                <div class="callout-banner">
+                    <strong>Recommended Search Record Set</strong>
+                    <span>Use a completed seeded record for screenshots, then repeat with the live demo vehicle after exit to show the full transaction flow.</span>
+                </div>
+
+                <div id="search-message"></div>
+
+                <section class="summary-grid">
+                    <article class="summary-card">
+                        <h3>Vehicle Details</h3>
+                        <div id="vehicle-summary" class="empty-state">Search a vehicle number to see details.</div>
+                    </article>
+                </section>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Slot</th>
+                            <th>Entry Time</th>
+                            <th>Exit Time</th>
+                            <th>Status</th>
+                            <th>Duration</th>
+                            <th>Fee</th>
+                        </tr>
+                        </thead>
+                        <tbody id="search-table-body">
+                        <tr>
+                            <td colspan="6" class="empty-state">No search performed yet.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/search.js" defer></script>
+</body>
+</html>

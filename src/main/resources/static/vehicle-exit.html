@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Exit and Billing | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="exit">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Billing Module</p>
+                        <h1>Vehicle Exit and Billing</h1>
+                    </div>
+                </div>
+
+                <div class="form-layout">
+                    <form id="exit-form" class="app-form">
+                        <label>
+                            Vehicle Number
+                            <input type="text" id="exitVehicleNumber" placeholder="Enter vehicle number" maxlength="20" pattern="[A-Za-z0-9 -]{4,20}" required>
+                            <div class="helper-text">Enter the active parked vehicle number to generate billing. Use <span class="mono-text">MH12DE3434</span> after your live entry, or seeded active records <span class="mono-text">MP04ZX9081</span> and <span class="mono-text">CG07TT4500</span>.</div>
+                        </label>
+
+                        <button type="submit" class="primary-btn">Process Exit & Calculate Fee</button>
+                    </form>
+
+                    <div class="info-stack">
+                        <div id="exit-message"></div>
+                        <article class="summary-card">
+                            <h3>Billing Logic</h3>
+                            <ul class="simple-list">
+                                <li>Up to 1 hour: ₹20</li>
+                                <li>After that: ₹10 for each additional started hour</li>
+                                <li>Exit action automatically releases the parking slot</li>
+                                <li>This page is recommended for the billing screenshot after exit.</li>
+                            </ul>
+                        </article>
+
+                        <article class="summary-card">
+                            <h3>Billing Summary</h3>
+                            <div id="exit-result" class="empty-state">Search an active vehicle by number to complete exit.</div>
+                        </article>
+
+                        <article class="summary-card">
+                            <h3>Currently Parked Vehicles</h3>
+                            <div id="active-vehicles" class="empty-state">Active parked vehicles will appear here.</div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/vehicle-exit.js" defer></script>
+</body>
+</html>
