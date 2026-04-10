@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Slot Status | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="slots">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Monitoring Module</p>
+                        <h1>Parking Slot Status Overview</h1>
+                    </div>
+                    <button class="secondary-btn" id="refresh-slots">Refresh Slots</button>
+                </div>
+
+                <div id="slots-message"></div>
+                <p class="helper-text">Recommended screenshot timing: capture this page immediately after adding the demo vehicle so the new slot appears as occupied.</p>
+
+                <div class="stats-grid compact-grid">
+                    <article class="stat-card">
+                        <span>Total Active Slots</span>
+                        <strong id="slot-total">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Occupied</span>
+                        <strong id="slot-occupied">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Vacant</span>
+                        <strong id="slot-vacant">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Total Car Slots</span>
+                        <strong id="slot-car">0</strong>
+                    </article>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Slot Number</th>
+                            <th>Slot Type</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody id="slot-table-body">
+                        <tr>
+                            <td colspan="3" class="empty-state">Loading slot data...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/slots.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Dashboard | Vehicle Parking Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="dashboard">
+<div class="app-layout">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+        <header id="topbar"></header>
+        <main class="page-content">
+            <section class="hero-card">
+                <div>
+                    <p class="eyebrow">Administrative Overview</p>
+                    <h1>Vehicle Parking Administrative Dashboard</h1>
+                    <p class="muted-text">Monitor parking capacity, active vehicles, daily movement, and revenue from one formal summary screen.</p>
+                </div>
+                <div class="hero-actions">
+                    <a class="primary-btn" href="/vehicle-entry.html">Add Vehicle Entry</a>
+                    <a class="secondary-btn" href="/vehicle-exit.html">Process Exit</a>
+                </div>
+            </section>
+
+            <div id="dashboard-message"></div>
+
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <span>Total Slots</span>
+                    <strong id="total-slots">0</strong>
+                    <small class="stat-note">All configured active parking slots</small>
+                </article>
+                <article class="stat-card">
+                    <span>Occupied Slots</span>
+                    <strong id="occupied-slots">0</strong>
+                    <small class="stat-note">Slots currently assigned to parked vehicles</small>
+                </article>
+                <article class="stat-card">
+                    <span>Vacant Slots</span>
+                    <strong id="vacant-slots">0</strong>
+                    <small class="stat-note">Slots available for new vehicle entry</small>
+                </article>
+                <article class="stat-card">
+                    <span>Today's Vehicle Count</span>
+                    <strong id="today-vehicle-count">0</strong>
+                    <small class="stat-note">Total entries recorded for the current day</small>
+                </article>
+                <article class="stat-card revenue-card">
+                    <span>Today's Revenue</span>
+                    <strong id="today-revenue">₹0</strong>
+                    <small class="stat-note">Total billing amount collected today</small>
+                </article>
+                <article class="stat-card accent-card">
+                    <span>Occupancy Rate</span>
+                    <strong id="occupancy-stat">0%</strong>
+                    <small class="stat-note">Current utilization of the active parking capacity</small>
+                </article>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="panel">
+                    <div class="table-title">
+                        <div>
+                            <h2>Currently Parked Vehicles</h2>
+                            <p>Live operational view of vehicles currently inside the parking area.</p>
+                        </div>
+                        <span class="badge info">Occupancy <span id="occupancy-rate">0%</span></span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Vehicle Number</th>
+                                <th>Slot</th>
+                                <th>Type</th>
+                                <th>Entry Time</th>
+                            </tr>
+                            </thead>
+                            <tbody id="dashboard-active-body">
+                            <tr>
+                                <td colspan="4" class="empty-state">Loading active parking records...</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-header">
+                        <h2>Recommended Demonstration Flow</h2>
+                    </div>
+                    <ol class="demo-sequence">
+                        <li>Login with the administrator credentials.</li>
+                        <li>Open the dashboard and explain the live statistics.</li>
+                        <li>Add a vehicle entry using the recommended demo record.</li>
+                        <li>Show the allocated parking slot in the confirmation panel.</li>
+                        <li>Open the slot status page and highlight the newly occupied slot.</li>
+                        <li>Process vehicle exit from the billing module.</li>
+                        <li>Explain the generated bill and parking duration.</li>
+                        <li>Search the same vehicle number to show stored transaction history.</li>
+                        <li>Open the report page and explain entries, exits, and revenue.</li>
+                    </ol>
+                    <div class="action-grid compact-actions">
+                        <a class="action-tile" href="/vehicle-entry.html">
+                            <h3>Vehicle Entry</h3>
+                            <p>Start the live demonstration with a new vehicle record.</p>
+                        </a>
+                        <a class="action-tile" href="/reports.html">
+                            <h3>Reports</h3>
+                            <p>End the demo with daily activity and revenue summary.</p>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Presentation Notes</h2>
+                </div>
+                <div class="callout-banner">
+                    <strong>Recommended Live Demo Data</strong>
+                    <span>Vehicle Number: <span class="mono-text">MH12DE3434</span> | Owner: Rahul Deshmukh | Type: CAR | Color: Silver</span>
+                </div>
+                <ul class="simple-list">
+                    <li>Fee rule: first hour ₹20, each additional started hour ₹10.</li>
+                    <li>Recommended live demo vehicle number: <span class="mono-text">MH12DE3434</span>.</li>
+                    <li>Recommended report and search samples: <span class="mono-text">MP09AB1234</span> and <span class="mono-text">DL01EE8899</span>.</li>
+                    <li>The seeded dataset contains active, completed, and previous-day records for clean screenshots.</li>
+                    <li>All pages are styled to look formal and report-friendly.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/dashboard.js" defer></script>
+</body>
+</html>
